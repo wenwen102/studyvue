@@ -19,6 +19,7 @@
       <input v-model="question" />
     </p>
     <p>{{ answer }}</p>
+    <p>5. 使用git</p>
   </div>
 </template>
 
