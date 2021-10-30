@@ -19,7 +19,33 @@
       <input v-model="question" />
     </p>
     <p>{{ answer }}</p>
-    <p>5. 使用git</p>
+    <p>
+      5. Class 与 Style 绑定: 表达式结果的类型除了字符串之外，还可以是对象"data,
+      computed"或数组。PS :class 指令也可以与普通的 class attribute 共存。
+    </p>
+    <p>6. v-for</p>
+    <div id="todo-list-example">
+      <form v-on:submit.prevent="addNewTodo">
+        <label for="new-todo">Add a todo</label>
+        <input
+          v-model="newTodoText"
+          id="new-todo"
+          placeholder="E.g. Feed the cat"
+        />
+        <button>Add</button>
+      </form>
+      <ul>
+        <li
+          is="todo-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:title="todo.title"
+        >
+          {{ todo.title }}
+          <button v-on:click="todos.splice(index, 1)">Remove</button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -36,6 +62,22 @@ export default {
       // 在数据变化时执行异步或开销较大的操作时，watch是最有用的
       question: '',
       answer: 'I cannot give you an answer until you ask a question!',
+      newTodoText: '',
+      todos: [
+        {
+          id: 1,
+          title: 'Do the dishes',
+        },
+        {
+          id: 2,
+          title: 'Take out the trash',
+        },
+        {
+          id: 3,
+          title: 'Mow the lawn',
+        },
+      ],
+      nextTodoId: 4,
     };
   },
   mounted() {
@@ -58,6 +100,13 @@ export default {
         .catch(function (error) {
           vm.answer = 'Error! Could not reach the API. ' + error;
         });
+    },
+    addNewTodo: function () {
+      this.todos.push({
+        id: this.nextTodoId++,
+        title: this.newTodoText,
+      });
+      this.newTodoText = '';
     },
   },
   computed: {
