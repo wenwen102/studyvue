@@ -21,6 +21,11 @@ const routes = [
     // component: Syntax,
     component: () => import('../views/Syntax.vue'),
   },
+  {
+    path: '/template',
+    name: 'Template',
+    component: () => import('../views/Template.vue'),
+  },
 ];
 
 const router = new VueRouter({

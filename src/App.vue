@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">介绍</router-link> |
       <router-link to="/instance">Vue实例</router-link>|
-      <router-link to="/syntax">模板语法</router-link>
+      <router-link to="/syntax">模板语法</router-link>|
+      <router-link to="/template">组件</router-link>
     </div>
     <router-view />
   </div>

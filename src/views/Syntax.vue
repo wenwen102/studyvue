@@ -17,6 +17,8 @@
     <p>
       Ask a yes/no question:
       <input v-model="question" />
+      <span>.lazy modifier:(v-bind+@change)</span>
+      <input v-model.lazy="question" />
     </p>
     <p>{{ answer }}</p>
     <p>
@@ -25,7 +27,7 @@
     </p>
     <p>6. v-for</p>
     <div id="todo-list-example">
-      <form v-on:submit.prevent="addNewTodo">
+      <form @submit="addNewTodo">
         <label for="new-todo">Add a todo</label>
         <input
           v-model="newTodoText"
@@ -36,7 +38,6 @@
       </form>
       <ul>
         <li
-          is="todo-item"
           v-for="(todo, index) in todos"
           v-bind:key="todo.id"
           v-bind:title="todo.title"
