@@ -1,8 +1,5 @@
 <template>
-  <input
-    v-bind:value="value"
-    v-on:input="$emit('input', $event.target.value)"
-  />
+  <input v-bind:value="value" @input="$emit('input', $event.target.value)" />
 </template>
 
 <script>
@@ -12,7 +9,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #cachea {
   border: 1px solid rgb(124, 39, 24);
 }
