@@ -10,6 +10,7 @@
     <p>2. 插槽</p>
     <slot-case>我是一个插槽</slot-case>
     <slot-case>我是第二个插槽</slot-case>
+    <p>3. 我来尝试一下使用分支dev</p>
   </div>
 </template>
 
