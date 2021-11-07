@@ -9,7 +9,7 @@ export default {
     console.log('activated 被 keep-alive 缓存的组件激活时调用。(组件a');
   },
   deactivated() {
-    console.log('deactivated 被 keep-alive 缓存的组件失活时调用。(组件a');
+    console.log('deactivate d 被 keep-alive 缓存的组件失活时调用。(组件a');
   },
 };
 </script>
