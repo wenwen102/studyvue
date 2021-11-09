@@ -11,7 +11,8 @@
     <slot-case>我是一个插槽</slot-case>
     <slot-case>我是第二个插槽</slot-case>
     <p>3. 我来尝试一下使用分支dev</p>
-    <p>4. 冲突解决2</p>
+    <p>4. 冲突解决</p>
+    <p>4.1 冲突冲突完成</p>
   </div>
 </template>
 
