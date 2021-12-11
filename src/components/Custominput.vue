@@ -1,11 +1,16 @@
 <template>
-  <input v-bind:value="value" @input="$emit('input', $event.target.value)" />
+  <input :value="value" @input="$emit('input', $event.target.value)" />
 </template>
 
 <script>
 export default {
   name: 'Custominput',
   props: ['value'],
+  methods: {
+    // inputHandler() {
+    //   this.$emit('input', this.value);
+    // }, // 为什么这里不可? 会引发表单冲突
+  },
 };
 </script>
 
